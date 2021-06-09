@@ -1,0 +1,17 @@
+{
+  "name": "chick-filet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "jenkins-x-bot",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.18.0",
+    "@types/node-fetch": "^2.5.10",
+    "node-fetch": "^2.6.1"
+  }
+}

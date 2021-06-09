@@ -1,0 +1,49 @@
+{
+  "Resources": {
+    "GenericAppName": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "ChickfiletLocations",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "State",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "CityPostalcode",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "StoreId",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "StoreId",
+            "KeyType": "HASH"
+          }
+        ],
+        "GlobalSecondaryIndexes": [
+          {
+            "IndexName": "StoreLocationIndex",
+            "KeySchema": [
+              {
+                "AttributeName": "State",
+                "KeyType": "HASH"
+              },
+              {
+                "AttributeName": "CityPostalcode",
+                "KeyType": "RANGE"
+              }
+            ],
+            "Projection": {
+              "ProjectionType": "ALL"
+            }
+          }
+        ],
+        "BillingMode": "PAY_PER_REQUEST"
+      }
+    }
+  }
+}

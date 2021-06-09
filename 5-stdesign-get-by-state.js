@@ -26,26 +26,3 @@ const client = new DynamoDBClient();
     console.error(err);
   }
 })();
-
-// city too
-// (async () => {
-//   try {
-//     console.time("querytime");
-//     const results = await client.send(
-//       new QueryCommand({
-//         TableName: "ChickfiletLocations",
-//         IndexName: "StoreLocationIndex",
-//         KeyConditionExpression: "#S = :S AND begins_with(#cp, :city)",
-//         ExpressionAttributeNames: { "#S": "State", "#cp": "CityPostalcode" },
-//         ExpressionAttributeValues: {
-//           ":S": { S: "SC" },
-//           ":city": { S: "Spart" },
-//         },
-//       })
-//     );
-//     console.log(results.Items.forEach((item) => console.log(item.Website)));
-//     console.timeEnd("querytime");
-//   } catch (err) {
-//     console.error(err);
-//   }
-// })();

@@ -60,11 +60,3 @@ async function createTable() {
 }
 
 createTable();
-// (async () => {
-//   try {
-//     const results = await client.send(new ListTablesCommand({}));
-//     console.log(results);
-//   } catch (err) {
-//     console.error(err);
-//   }
-// })();
